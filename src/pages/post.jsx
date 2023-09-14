@@ -11,7 +11,7 @@ function Post() {
   const [photo, setPhoto] = useState('')
   const [msg, setMsg] = useState('')
   const user = localStorage.getItem('user')
-  console.log(user)
+  console.log(user.IDUSER)
   // console.log(localStorage.getItem('user'))
 
   const navigate = useNavigate()
