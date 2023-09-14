@@ -17,7 +17,7 @@ function Login() {
   const signUp = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:3000/user/create', {
+      await axios.post('https://photo-backend-production.up.railway.app/user/create', {
         USERNAME: username,
         NAME: name,
         PASSWORD: password,
