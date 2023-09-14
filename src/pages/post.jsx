@@ -57,12 +57,12 @@ function Post() {
 
       <Form.Group className="mb-3" controlId="formBasicDescription">
         <Form.Label>Description</Form.Label>
-        <Form.Control value={description} onChange={(e) => setDescription(e.target.value)} type="password" placeholder="Enter Description..." />
+        <Form.Control value={description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Enter Description..." />
       </Form.Group>
       
       <Form.Group className="mb-3" controlId="formBasicImages">
         <Form.Label>Images</Form.Label>
-        <Form.Control value={photo} onChange={(e) => setPhoto(e.target.value)} type="password" placeholder="Enter URL..." />
+        <Form.Control value={photo} onChange={(e) => setPhoto(e.target.value)} type="text" placeholder="Enter URL..." />
       </Form.Group>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
