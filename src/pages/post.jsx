@@ -60,7 +60,7 @@ function Post() {
       
       <Form.Group className="mb-3" controlId="formBasicImages">
         <Form.Label>Images</Form.Label>
-        <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter URL..." />
+        <Form.Control value={photo} onChange={(e) => setPhoto(e.target.value)} type="password" placeholder="Enter URL..." />
       </Form.Group>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
