@@ -12,8 +12,6 @@ function Post() {
   const [msg, setMsg] = useState('')
   const user = localStorage.getItem('user')
   const userdata = JSON.parse(user)
-  console.log(userdata.IDUSER)
-  // console.log(localStorage.getItem('user'))
 
   const navigate = useNavigate()
 
@@ -24,9 +22,10 @@ function Post() {
         TITLE: title,
         DESCRIPTION: description,
         PHOTO: photo,
-        USERS: localStorage.getItem('user'),
+        USERS: userdata.IDUSER,
       })
       .then((res) => {
+        console.log(res.data)
         // const response = res.data.loginResponse
         // if(response.code === 200) {
         //   const jsonData = JSON.stringify(response.data.user)
