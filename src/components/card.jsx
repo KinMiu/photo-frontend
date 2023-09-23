@@ -10,10 +10,13 @@ import { Link } from "react-router-dom";
 const K = () => {
     const [card, setCard] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:3002/photos/get')
+        axios.get('https://photo-backend-production.up.railway.app/photos/get')
         .then((res) => {
             // console.log(res.data.data)
             setCard(res.data.data)
+        })
+        .catch((err) => {
+            console.log(err)
         })
     }, [])
     return (
