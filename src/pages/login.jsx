@@ -8,14 +8,14 @@ import axios from 'axios';
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [msg, setMsg] = useState('')
+  // const [msg, setMsg] = useState('')
 
   const navigate = useNavigate()
 
   const login = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('https://photo-backend-production.up.railway.app/user/login', {
+      await axios.post('http://localhost:3002/user/login', {
         USERNAME: username,
         PASSWORD: password,
       })
@@ -28,7 +28,7 @@ function Login() {
           navigate('/')
           window.location.reload();
         } else {
-          setMsg(response.message)
+          // setMsg(response.message)
           console.log("Response", res)
         }
       })

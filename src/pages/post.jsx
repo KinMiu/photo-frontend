@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom'
+// import { Link, useNavigate } from 'react-router-dom'
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -9,11 +9,11 @@ function Post() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
-  const [msg, setMsg] = useState('')
+  // const [msg, setMsg] = useState('')
   const user = localStorage.getItem('user')
   const userdata = JSON.parse(user)
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const login = async (e) => {
     e.preventDefault()
@@ -47,7 +47,7 @@ function Post() {
   }
   return (
     <div className='d-flex justify-content-center align-items-center text-items-center bg-light-subtle' style={{width: '100%', height: '100%'}}>
-      <div className="container d-flex justify-content-start align-items-start mt-lg-5 p-lg-3 bg-success bg-opacity-50" style={{ width: '1280px', height: '530px'}}>
+      <div className="container d-flex justify-content-start align-items-start mt-lg-5 p-lg-3 bg-success bg-opacity-50" style={{ maxwidth: '1280px', height: '480px'}}>
     <Form style={{ width: '500px' }} onSubmit={login}>
 
       <Form.Group className="mb-3" controlId="formBasicTitle">

@@ -43,14 +43,17 @@ function NavScrollExample() {
                         </Form>
                         {
                             isLogin ? (
-                                    <Dropdown>
-                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                    <Dropdown className='dropstart' >
+                                    <Dropdown.Toggle variant="success" id="dropdown-basic" drop='down-centered' >
                                       {name}
                                     </Dropdown.Toggle>
                               
                                     <Dropdown.Menu>
                                       <Dropdown.Item href="#/action-2">Profile</Dropdown.Item>
-                                      <Dropdown.Item href="/post-photo">Post</Dropdown.Item>
+                                      <hr className="dropdown-divider"></hr>
+                                      <Dropdown.Item href="/dashboard">dashboard</Dropdown.Item>
+                                      <Dropdown.Item href="#/action-2">Setting</Dropdown.Item>
+                                      <hr className="dropdown-divider"></hr>
                                       <Dropdown.Item href={'/'} onClick={logout}>Logout</Dropdown.Item>
                                     </Dropdown.Menu>
                                   </Dropdown>
