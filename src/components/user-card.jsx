@@ -13,7 +13,7 @@ const K = () => {
     // console.log(parsingData.IDUSER)
     const [card, setCard] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:3002/photos/getbyuser/${parsingData.IDUSER}`)
+        axios.get(`https://photo-backend-production.up.railway.app/photos/getbyuser/${parsingData.IDUSER}`)
         .then((res) => {
             console.log(res.data.data)
             setCard(res.data.data)
