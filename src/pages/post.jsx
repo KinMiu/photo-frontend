@@ -25,7 +25,7 @@ function Post() {
         USERS: userdata.IDUSER,
       })
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         const response = res.data
         if(response.code === 200) {
           navigate('/dashboard')
