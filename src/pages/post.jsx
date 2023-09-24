@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -13,7 +13,7 @@ function Post() {
   const user = localStorage.getItem('user')
   const userdata = JSON.parse(user)
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const login = async (e) => {
     e.preventDefault()
