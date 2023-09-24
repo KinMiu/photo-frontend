@@ -21,7 +21,7 @@ const Dashboard = () => {
     return(
         <div className="mt-md-3 flu ">
             <Button href="/post" className="ms-3" variant="success" type="submit">
-                Post
+                Upload
             </Button>
             <div className="CardGroup d-flex flex-row gap-2 justify-content-start mx-3 flex-wrap mt-3 border rounded border-2 p-2" style={{ minHeight: '400px' }}>
                 <CardUser cardData={card} />
