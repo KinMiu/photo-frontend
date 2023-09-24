@@ -28,7 +28,7 @@ function Post() {
         console.log(res.data)
         const response = res.data
         if(response.code === 200) {
-          navigate('/')
+          navigate('/dashboard')
           window.location.reload();
         } else {
           // setMsg(response.message)
