@@ -31,7 +31,7 @@ function Post() {
           navigate('/')
           window.location.reload();
         } else {
-          setMsg(response.message)
+          // setMsg(response.message)
           console.log("Response", res)
         }
       })
