@@ -26,17 +26,14 @@ function Post() {
       })
       .then((res) => {
         console.log(res.data)
-        // const response = res.data.loginResponse
-        // if(response.code === 200) {
-        //   const jsonData = JSON.stringify(response.data.user)
-        //   console.log(jsonData)
-        //   localStorage.setItem('user', jsonData)
-        //   navigate('/')
-        //   window.location.reload();
-        // } else {
-        //   setMsg(response.message)
-        //   console.log("Response", res)
-        // }
+        const response = res.data
+        if(response.code === 200) {
+          navigate('/')
+          window.location.reload();
+        } else {
+          setMsg(response.message)
+          console.log("Response", res)
+        }
       })
     } catch (error) {
       if(error.response){
