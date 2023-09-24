@@ -51,7 +51,7 @@ function NavScrollExample() {
                                     <Dropdown.Menu>
                                       <Dropdown.Item href="#/action-2">Profile</Dropdown.Item>
                                       <hr className="dropdown-divider"></hr>
-                                      <Dropdown.Item href="/dashboard">dashboard</Dropdown.Item>
+                                      <Dropdown.Item href="/dashboard">Dashboard</Dropdown.Item>
                                       <Dropdown.Item href="#/action-2">Setting</Dropdown.Item>
                                       <hr className="dropdown-divider"></hr>
                                       <Dropdown.Item href={'/'} onClick={logout}>Logout</Dropdown.Item>

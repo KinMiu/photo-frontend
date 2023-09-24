@@ -28,7 +28,7 @@ const K = () => {
                 const split = url.split('/')
                 const gambar = split[5]
                 return(
-                    <Link to={`/photo-info/${data.ID}`}>
+                    <Link to={`/photo-info/${data.ID}`} key={index}>
                         <div key={index}>
                             <img style={{ maxWidth: '270px' }}  src={`https://drive.google.com/uc?export=view&id=${gambar}`} className="img-thumbnail" alt={data.TITLE}></img>
                         </div>

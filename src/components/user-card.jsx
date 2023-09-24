@@ -1,45 +1,41 @@
 import React from "react";
-// import {Link} from 'react-router-dom'
-// import { Button, Card } from "react-bootstrap";
-
-
-import axios from 'axios'
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {Button} from 'react-bootstrap'
 
-const K = () => {
-    const userData = localStorage.getItem('user')
-    const parsingData = JSON.parse(userData)
-    // console.log(parsingData.IDUSER)
-    const [card, setCard] = useState([])
-    useEffect(() => {
-        axios.get(`https://photo-backend-production.up.railway.app/photos/getbyuser/${parsingData.IDUSER}`)
-        .then((res) => {
-            console.log(res.data.data)
-            setCard(res.data.data)
-        })
-    }, [])
+const CardComponent = ({ cardData }) => {
+    // console.log(cardData)
+    if(!cardData || cardData.length === 0 ) {
+        return(
+            <div className="mx-auto my-4 d-flex flex-column justify-content-center align-items-center text-center border p-3" style={{ width: "600px" }}>
+                <h1>Empty Photo</h1>
+                <p>Upload Your photo Now !</p>
+                <Button href="/post" className="ms-3" variant="success" type="submit">
+                    Upload
+                </Button>
+            </div>
+        )
+    }
     return (
-        
-        <>
+        <div className="d-flex flex-row gap-2">
         {
-            card.map((data, index) => {
-                const url = data.PHOTO
-                const split = url.split('/')
-                const gambar = split[5]
-                return(
-                    <Link to={`/photo-info/${data.ID}`}>
-                        <div key={index}>
-                            <img style={{ maxWidth: '270px', }}  src={`https://drive.google.com/uc?export=view&id=${gambar}`} className="img-thumbnail" alt={data.TITLE}></img>
-                        </div>
-                    </Link>
-                )
+            cardData.map((data, index) => {
+                
+                    const url = data.PHOTO
+                    const split = url.split('/')
+                    const gambar = split[5]
+                    return(
+                        <Link to={`/photo-info/${data.ID}`} key={index}>
+                            <div key={index}>
+                                <img style={{ maxWidth: '270px', }} src={`https://drive.google.com/uc?export=view&id=${gambar}`} className="img-thumbnail" alt={data.TITLE}></img>
+                            </div>
+                        </Link>
+                    )
+                
             })
         }
-        
-        </>
+        </div>
     )
 }
 
-export default K;
+export default CardComponent;
 
