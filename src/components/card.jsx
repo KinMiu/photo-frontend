@@ -30,7 +30,7 @@ const K = () => {
                 return(
                     <Link to={`/photo-info/${data.ID}`} key={index}>
                         <div key={index}>
-                            <img style={{ maxHeight: '350px', maxWidth: "1200px" }}  src={`https://drive.google.com/uc?export=view&id=${gambar}`} className="img-thumbnail" alt={data.TITLE}></img>
+                            <img style={{ maxHeight: '350px', maxWidth: "100%" }}  src={`https://drive.google.com/uc?export=view&id=${gambar}`} className="img-thumbnail" alt={data.TITLE}></img>
                         </div>
                     </Link>
                 )
