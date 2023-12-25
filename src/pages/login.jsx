@@ -15,22 +15,24 @@ function Login() {
   const login = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('https://photo-backend-production.up.railway.app/user/login', {
+      // await axios.post('https://photo-backend-production.up.railway.app/user/login', {
+      //   USERNAME: username,
+      //   PASSWORD: password,
+      // })
+      await axios.post('http://localhost:3002/user/login', {
         USERNAME: username,
         PASSWORD: password,
+      }, {
+        withCredentials: true
       })
       .then((res) => {
         const response = res.data.loginResponse
-        if(response.code === 200) {
-          const jsonData = JSON.stringify(response.data.user)
-          console.log(jsonData)
-          localStorage.setItem('user', jsonData)
+        console.log("Res :", response)
+        if(response.code === 200){
           navigate('/')
-          window.location.reload();
-        } else {
-          // setMsg(response.message)
-          console.log("Response", res)
         }
+      }).catch((err) => {
+        console.log("Err :", err)
       })
     } catch (error) {
       if(error.response){

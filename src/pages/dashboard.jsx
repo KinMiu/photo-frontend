@@ -6,15 +6,14 @@ import axios from 'axios'
 import { useEffect, useState } from "react";
 
 const Dashboard = () => {
+    
     const userData = localStorage.getItem('user')
     const parsingData = JSON.parse(userData)
-    // console.log(parsingData.IDUSER)
     const [card, setCard] = useState([])
-    // console.log(setCard)
     useEffect(() => {
         axios.get(`https://photo-backend-production.up.railway.app/photos/getbyuser/${parsingData.IDUSER}`)
         .then((res) => {
-            // console.log(res.data.data)
+            // console.log(config.headers.authorization)
             setCard(res.data.data)
         })
     }, [])

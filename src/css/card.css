@@ -1,0 +1,11 @@
+.photo {
+    max-width: 350px !important;
+    max-height: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .photo {
+        width: 100% !important;
+        height: auto;
+    }
+}

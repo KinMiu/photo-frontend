@@ -5,7 +5,9 @@ import React from "react";
 
 import axios from 'axios'
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+import "../css/card.css"
 
 const K = () => {
     const [card, setCard] = useState([])
@@ -19,6 +21,18 @@ const K = () => {
             console.log(err)
         })
     }, [])
+
+    const infoCard = (id) => {
+        try {
+            // console.log(id)
+            axios.get(`https://photo-backend-production.up.railway.app/photos/get/${id}`)
+            .then((res) => {
+                console.log(res)
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
     return (
         
         <>
@@ -28,11 +42,11 @@ const K = () => {
                 const split = url.split('/')
                 const gambar = split[5]
                 return(
-                    <Link to={`/photo-info/${data.ID}`} key={index}>
-                        <div key={index}>
-                            <img style={{ maxHeight: '350px', width: "100%" }}  src={`https://drive.google.com/uc?export=view&id=${gambar}`} className="img-thumbnail" alt={data.TITLE}></img>
-                        </div>
-                    </Link>
+                    <div key={index}>
+                        <a href={`/photo-info/${data.ID}`} onClick={() => infoCard(data.ID)}>
+                            <img src={`https://drive.google.com/uc?export=view&id=${gambar}`} className="photo img-thumbnail" alt={data.TITLE}></img>
+                        </a>
+                    </div>
                 )
             })
         }
