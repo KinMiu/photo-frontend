@@ -12,7 +12,7 @@ import "../css/card.css"
 const K = () => {
     const [card, setCard] = useState([])
     useEffect(() => {
-        axios.get('https://photo-backend-production.up.railway.app/photos/get')
+        axios.get('https://photo-backend.vercel.app/photos/get')
         .then((res) => {
             // console.log(res.data.data)
             setCard(res.data.data)
@@ -25,7 +25,7 @@ const K = () => {
     const infoCard = (id) => {
         try {
             // console.log(id)
-            axios.get(`https://photo-backend-production.up.railway.app/photos/get/${id}`)
+            axios.get(`https://photo-backend.vercel.app/photos/get/${id}`)
             .then((res) => {
                 console.log(res)
             })

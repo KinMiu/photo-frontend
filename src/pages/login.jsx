@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, json, useNavigate } from 'react-router-dom'
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -8,17 +8,10 @@ import axios from 'axios';
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  // const [msg, setMsg] = useState('')
-
-  const navigate = useNavigate()
 
   const login = async (e) => {
     e.preventDefault()
     try {
-      // await axios.post('https://photo-backend.vercel.app/user/login', {
-      //   USERNAME: username,
-      //   PASSWORD: password,
-      // })
       await axios.post('https://photo-backend.vercel.app/user/login', {
         USERNAME: username,
         PASSWORD: password,
@@ -29,7 +22,9 @@ function Login() {
         const response = res.data.loginResponse
         console.log("Res :", response)
         if(response.code === 200){
-          window.location = '/'
+          const jsonData = JSON.stringify(response)
+          localStorage.setItem('users', jsonData)
+          // window.location = '/'
         }
       }).catch((err) => {
         console.log("Err :", err)
