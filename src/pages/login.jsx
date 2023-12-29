@@ -26,8 +26,8 @@ function Login() {
         withCredentials: true
       })
       .then((res) => {
-        // const response = res.data.loginResponse
-        // console.log("Res :", response)
+        const response = res.data.loginResponse
+        console.log("Res :", response)
         if(response.code === 200){
           window.location = '/'
         }
