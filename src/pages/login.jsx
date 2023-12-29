@@ -22,7 +22,7 @@ function Login() {
         const response = res.data.loginResponse
         console.log("Res :", response)
         if(response.code === 200){
-          const jsonData = JSON.stringify(response)
+          const jsonData = JSON.stringify(response.data.user)
           localStorage.setItem('users', jsonData)
           // window.location = '/'
         }
