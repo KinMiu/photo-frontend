@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 
 function NavScrollExample() {
     const isLogin = !!localStorage.getItem('user')
+    console.log(isLogin)
 
     const [name, setName] = useState('')
 
