@@ -8,18 +8,20 @@ function Post() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
-  const user = localStorage.getItem('user')
+  const user = localStorage.getItem('user') 
   const userdata = JSON.parse(user)
 
-  const login = async (e) => {
+  const Input = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('https://photo-backend.vercel.app/photos/create', {
+      const data = await axios.post('https://photo-backend.vercel.app/photos/create', {
         TITLE: title,
         DESCRIPTION: description,
         PHOTO: photo,
         USERS: userdata.IDUSER,
       })
+
+      console.log(data)
       .then((res) => {
         console.log("Luar If", res)
         const response = res.data
@@ -39,7 +41,7 @@ function Post() {
   return (
     <div className='d-flex justify-content-center align-items-center text-items-center bg-light-subtle' style={{width: '100%', height: '100%'}}>
       <div className="container d-flex justify-content-start align-items-start mt-lg-5 p-lg-3 bg-success bg-opacity-50" style={{ maxwidth: '1280px', height: '480px'}}>
-    <Form style={{ width: '500px' }} onSubmit={login}>
+    <Form style={{ width: '500px' }} onSubmit={Input}>
 
       <Form.Group className="mb-3" controlId="formBasicTitle">
         <Form.Label>Title</Form.Label>
