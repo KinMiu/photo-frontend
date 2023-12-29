@@ -1,8 +1,8 @@
 import CardUser from '../components/CardUser';
 import Button from 'react-bootstrap/Button';
 
-// import axios from 'axios'
-// import { useEffect, useState } from "react";
+import axios from 'axios'
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
     
