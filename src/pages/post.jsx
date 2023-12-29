@@ -8,7 +8,7 @@ function Post() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
-  const user = localStorage.getItem('user') 
+  const user = localStorage.getItem('users') 
   const userData = JSON.parse(user)
 
   console.log(userData)
