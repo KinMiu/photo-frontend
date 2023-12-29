@@ -23,7 +23,7 @@ function NavScrollExample() {
     }, [parseData])
 
     const logout = () => {
-        localStorage.removeItem('user')
+        localStorage.removeItem('users')
     }
 
     return (
