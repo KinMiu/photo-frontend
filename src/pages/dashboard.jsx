@@ -15,6 +15,7 @@ const Dashboard = () => {
     useEffect(() => {
         axios.get(`https://photo-backend.vercel.app/photos/getbyuser/${parsingData}`)
         .then((res) => {
+            console.log(res)
             setCard(res.data.data)
         }).catch(err => {
             console.error(err)
