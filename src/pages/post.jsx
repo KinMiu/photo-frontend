@@ -20,7 +20,7 @@ function Post() {
         TITLE: title,
         DESCRIPTION: description,
         PHOTO: photo,
-        USERS: userdata.IDUSER,
+        USERS: userData.IDUSER,
       })
 
       console.log(data)
