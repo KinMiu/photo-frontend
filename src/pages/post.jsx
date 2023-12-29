@@ -9,7 +9,9 @@ function Post() {
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
   const user = localStorage.getItem('user') 
-  const userdata = JSON.parse(user)
+  const userData = JSON.parse(user)
+
+  console.log(userData)
 
   const Input = async (e) => {
     e.preventDefault()
