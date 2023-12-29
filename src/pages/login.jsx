@@ -24,7 +24,7 @@ function Login() {
         if(response.code === 200){
           const jsonData = JSON.stringify(data)
           localStorage.setItem('users', jsonData)
-          // window.location = '/'
+          window.location = '/'
         }
       }).catch((err) => {
         console.log("Err :", err)
