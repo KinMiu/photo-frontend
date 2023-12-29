@@ -16,27 +16,20 @@ function Post() {
   const Input = async (e) => {
     e.preventDefault()
     try {
-      const data = await axios.post('https://photo-backend.vercel.app/photos/create', {
+      await axios.post('https://photo-backend.vercel.app/photos/create', {
         TITLE: title,
         DESCRIPTION: description,
         PHOTO: photo,
         USERS: userData.IDUSER,
       })
-
-      console.log(data)
       .then((res) => {
-        console.log("Luar If", res)
         const response = res.data
         if(response.code === 200) {
-          console.log("Dalam If :", response)
-        } else {
-          console.log("Response", res)
+          window.location = '/dashboard'
         }
       })
     } catch (error) {
-      if(error.response){
-        console.error("Error :",error.response)
-      }
+      console.error(error)
     }
 
   }
