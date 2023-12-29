@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 import "../css/card.css"
 
-const K = () => {
+const Kartu = () => {
     const [card, setCard] = useState([])
     useEffect(() => {
         axios.get('https://photo-backend.vercel.app/photos/get')
@@ -55,5 +55,5 @@ const K = () => {
     )
 }
 
-export default K;
+export default Kartu;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {Button} from 'react-bootstrap'
 
-const CardComponent = ({ cardData }) => {
+const CardUser = ({ cardData }) => {
     // console.log(cardData)
     if(!cardData || cardData.length === 0 ) {
         return(
@@ -37,5 +37,5 @@ const CardComponent = ({ cardData }) => {
     )
 }
 
-export default CardComponent;
+export default CardUser;
 

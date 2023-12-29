@@ -1,4 +1,4 @@
-import CardUser from "../components/user-card"
+import CardUser from "../components/CardUser"
 import Button from 'react-bootstrap/Button';
 
 import axios from 'axios'
