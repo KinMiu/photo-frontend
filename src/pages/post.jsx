@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom'
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -9,11 +8,8 @@ function Post() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
-  // const [msg, setMsg] = useState('')
   const user = localStorage.getItem('user')
   const userdata = JSON.parse(user)
-
-  const navigate = useNavigate()
 
   const login = async (e) => {
     e.preventDefault()
@@ -25,14 +21,11 @@ function Post() {
         USERS: userdata.IDUSER,
       })
       .then((res) => {
-        // console.log(res.data)
+        console.log("Luar If", res)
         const response = res.data
-        console.log(response)
         if(response.code === 200) {
-          navigate('/dashboard')
-          window.location.reload();
+          console.log("Dalam If :", response)
         } else {
-          // setMsg(response.message)
           console.log("Response", res)
         }
       })
