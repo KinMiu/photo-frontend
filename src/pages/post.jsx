@@ -27,6 +27,7 @@ function Post() {
       .then((res) => {
         // console.log(res.data)
         const response = res.data
+        console.log(response)
         if(response.code === 200) {
           navigate('/dashboard')
           window.location.reload();
