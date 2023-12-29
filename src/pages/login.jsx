@@ -20,10 +20,10 @@ function Login() {
       })
       .then((res) => {
         const response = res.data.loginResponse
-        console.log("Res :", response)
+        console.log("Res :", response.data.user)
         if(response.code === 200){
-          const jsonData = JSON.stringify(response.data.user)
-          localStorage.setItem('users', jsonData)
+          // const jsonData = JSON.stringify(response.data.user)
+          // localStorage.setItem('users', jsonData)
           // window.location = '/'
         }
       }).catch((err) => {
