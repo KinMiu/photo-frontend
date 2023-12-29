@@ -35,15 +35,8 @@ const Container = () => {
     //   }
 
     const logout = async () => {
-        try {
-            await axios.delete('http://localhost:3002/user/logout')
-            .then((res) => {
-                console.log(res)
-            }).catch((err) => {
-                console.log(err)
-            })
-        } catch (error) {
-            console.log(error)
+        const deleteUser = () => {
+            localStorage.removeItem('users')
         }
     }
     return (
