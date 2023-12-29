@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const Dashboard = () => {
     
-    const userData = localStorage.getItem('user')
+    const userData = localStorage.getItem('users')
     const parsingData = JSON.parse(userData)
 
     console.log(parsingData)
