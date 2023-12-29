@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function NavScrollExample() {
-    const isLogin = localStorage.getItem('user')
+    const isLogin = localStorage.getItem('users')
     console.log(isLogin)
 
     const [name, setName] = useState('')
 
-    const user = localStorage.getItem('user')
+    const user = localStorage.getItem('users')
 
     const parseData = JSON.parse(user)
     useEffect(() => {
