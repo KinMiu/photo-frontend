@@ -13,7 +13,7 @@ const Dashboard = () => {
 
     const [card, setCard] = useState([])
     useEffect(() => {
-        axios.get(`https://photo-backend.vercel.app/photos/getbyuser/${parsingData}`)
+        axios.get(`https://photo-backend.vercel.app/photos/getbyuser/${parsingData.IDUSER}`)
         .then((res) => {
             console.log(res)
             setCard(res.data.data)
