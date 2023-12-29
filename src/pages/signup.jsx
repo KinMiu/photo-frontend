@@ -17,7 +17,7 @@ function Login() {
   const signUp = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('https://photo-backend-production.up.railway.app/user/create', {
+      await axios.post('https://photo-backend.vercel.app/user/create', {
         USERNAME: username,
         NAME: name,
         PASSWORD: password,
@@ -25,7 +25,7 @@ function Login() {
       })
       .then((res) => {
         if(res.data.code === 200) {
-          navigate('/login')
+          window.location = '/login'
         } else {
           setMsg(res.data.message)
           // console.log(res.data.message)
