@@ -33,19 +33,6 @@ const Container = () => {
     //     //   }
     //     }
     //   }
-
-    const logout = async () => {
-        try {
-            await axios.delete('http://localhost:3002/user/logout')
-            .then((res) => {
-                console.log(res)
-            }).catch((err) => {
-                console.log(err)
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    }
     return (
         <div className="mt-md-3 flu ">
             <div className="CardGroup d-flex flex-row gap-2 justify-content-start align-items-center mx-3 flex-wrap border border-2 rounded p-2">

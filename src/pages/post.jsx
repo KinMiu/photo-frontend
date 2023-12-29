@@ -18,7 +18,7 @@ function Post() {
   const login = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('https://photo-backend-production.up.railway.app/photos/create', {
+      await axios.post('https://photo-backend.vercel.app/photos/create', {
         TITLE: title,
         DESCRIPTION: description,
         PHOTO: photo,

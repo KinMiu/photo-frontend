@@ -11,7 +11,7 @@ const Dashboard = () => {
     const parsingData = JSON.parse(userData)
     const [card, setCard] = useState([])
     useEffect(() => {
-        axios.get(`https://photo-backend-production.up.railway.app/photos/getbyuser/${parsingData.IDUSER}`)
+        axios.get(`https://photo-backend.vercel.app/photos/getbyuser/${parsingData.IDUSER}`)
         .then((res) => {
             // console.log(config.headers.authorization)
             setCard(res.data.data)
