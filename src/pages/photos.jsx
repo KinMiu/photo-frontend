@@ -25,9 +25,9 @@ function Photos() {
         // const res = await axios.get(`http://localhost:3002/photos/get/${id}`)
         const res = await axios.get(`https://photo-backend.vercel.app/photos/get/${id}`)
         const data = res.data.data
-        console.log(data)
         const PublishedDate = FormattingDate(data.CREATED_AT)
         const url = data.PHOTO
+        console.log(url)
         const split = url.split('/')
         const gambar = split[5]
         console.log(gambar)
