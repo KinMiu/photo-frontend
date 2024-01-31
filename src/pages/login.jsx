@@ -12,14 +12,14 @@ function Login() {
   const login = async (e) => {
     e.preventDefault()
     try {
-      // await axios.post('https://photo-backend.vercel.app/user/login', {
-      //   USERNAME: username,
-      //   PASSWORD: password,
-      // })
-      await axios.post('http://localhost:3002/user/login', {
+      await axios.post('https://photo-backend.vercel.app/user/login', {
         USERNAME: username,
         PASSWORD: password,
       })
+      // await axios.post('http://localhost:3002/user/login', {
+      //   USERNAME: username,
+      //   PASSWORD: password,
+      // })
       .then((res) => {
         const response = res.data.loginResponse
         const data = response.data.user

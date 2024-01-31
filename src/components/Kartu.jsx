@@ -11,8 +11,8 @@ import "../css/card.css"
 const Kartu = () => {
     const [card, setCard] = useState([])
     useEffect(() => {
-        // axios.get('https://photo-backend.vercel.app/photos/get')
-        axios.get('http://localhost:3002/photos/get')
+        axios.get('https://photo-backend.vercel.app/photos/get')
+        // axios.get('http://localhost:3002/photos/get')
         .then((res) => {
             setCard(res.data.data)
         })
