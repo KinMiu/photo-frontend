@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { useState } from 'react';
 import axios from 'axios';
@@ -12,12 +12,16 @@ function Login() {
   const [confPassword, setConfPassword] = useState('')
   const [msg, setMsg] = useState('')
 
-  const navigate = useNavigate()
-
   const signUp = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('https://photo-backend.vercel.app/user/create', {
+      // await axios.post('https://photo-backend.vercel.app/user/create', {
+      //   USERNAME: username,
+      //   NAME: name,
+      //   PASSWORD: password,
+      //   CONFPASSWORD: confPassword
+      // })
+      await axios.post('http://localhost:3002/user/create', {
         USERNAME: username,
         NAME: name,
         PASSWORD: password,
@@ -28,7 +32,6 @@ function Login() {
           window.location = '/login'
         } else {
           setMsg(res.data.message)
-          // console.log(res.data.message)
         }
       })
     } catch (error) {
@@ -40,7 +43,7 @@ function Login() {
   }
   return (
     <div className='d-flex justify-content-center align-items-center text-items-center bg-light-subtle' style={{width: '100%', height: '100%'}}>
-      <div className="container d-flex justify-content-center align-items-center mt-lg-5 p-lg-3 bg-success bg-opacity-50" style={{ width: '400px', }}>
+      <div className="container d-flex mt-4 p-3 rounded justify-content-center align-items-center mt-lg-5 bg-success bg-opacity-50" style={{ width: '350px', }}>
         <Form style={{ width: '500px' }} onSubmit={signUp}>
           <p>{msg}</p>
           <Form.Group className="mb-3" controlId="formBasicUsername">
@@ -63,7 +66,7 @@ function Login() {
             <Button variant="success" type="submit">
               Sign Up
             </Button>
-            <Link to={'/login'}>Login</Link>
+            <Link className='text-white' to={'/login'}>Login</Link>
           </div>
         </Form>
       </div>

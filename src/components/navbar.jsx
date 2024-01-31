@@ -31,7 +31,7 @@ function NavScrollExample() {
                 <Navbar.Brand className='fw-bold' href={'/'}>PHOTOGRAPH</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
-                    <div className='ms-auto d-flex flex-row justify-content-center align-items-center gap-3'>
+                    <div className='ms-auto d-flex flex-row justify-content-center align-items-center mt-3 gap-3 mt-sm-0 '>
                         <Form className="d-flex">
                             <Form.Control
                                 type="search"

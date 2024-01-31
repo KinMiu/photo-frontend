@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import {Button} from 'react-bootstrap'
 
 const CardUser = ({ cardData }) => {
-    console.log(cardData)
     if(!cardData || cardData.length === 0 ) {
         return(
             <div className="mx-auto my-4 d-flex flex-column justify-content-center align-items-center text-center border p-3" style={{ width: "600px" }}>

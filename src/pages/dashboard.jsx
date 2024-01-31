@@ -5,17 +5,14 @@ import axios from 'axios'
 import { useEffect, useState } from "react";
 
 const Dashboard = () => {
-    
     const userData = localStorage.getItem('users')
     const parsingData = JSON.parse(userData)
-
-    console.log(parsingData)
-
     const [card, setCard] = useState([])
+    
     useEffect(() => {
-        axios.get(`https://photo-backend.vercel.app/photos/getbyuser/${parsingData.IDUSER}`)
+        // axios.get(`https://photo-backend.vercel.app/photos/getbyuser/${parsingData.IDUSER}`)
+        axios.get(`http://localhost:3002/photos/getbyuser/${parsingData.IDUSER}`)
         .then((res) => {
-            console.log(res)
             setCard(res.data.data)
         }).catch(err => {
             console.error(err)

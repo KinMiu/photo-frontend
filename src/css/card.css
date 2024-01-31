@@ -1,6 +1,6 @@
 .photo {
     max-width: 350px !important;
-    max-height: auto;
+    max-height: 350px;
 }
 
 @media screen and (max-width: 600px) {
